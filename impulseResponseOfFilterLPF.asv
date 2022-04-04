@@ -1,0 +1,32 @@
+function lpfCoff = impulseResponseOfFilterLPF(Cutoff, filterLength, type)
+    
+    n = -floor(filterLength/2):floor(filterLength/2)-1;
+    
+    M = 0:filterLength-1;
+    
+    RectWindow1 = ones(1, length(n));
+    
+    % Hamming window
+    HammWindow1 = 0.54 - 0.46*cos((2*pi*M1)/length(M1));
+
+    % Hanning window
+    HannWindow1 = 0.5 - 0.5*cos((2*pi*M1)/length(M1));
+
+    
+    hfilter = zeros(1, filterLength);
+    
+    for i= 1:length(n)
+        if(n(i) == 0)
+            hfilter(i) = Cutoff;
+        else
+            hfilter(i) = sin((pi*Cutoff)*n(i))/(pi*n(i));
+        end
+    end
+    
+    lpfCoff = hfilter.*RectWindow1;
+    
+    freqz(lpfCoff);
+    title("LPF design");
+    
+    
+end
