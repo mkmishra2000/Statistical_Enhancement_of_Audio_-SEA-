@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Author :- Manas Kumar Mishra
 % Function for implement FIR filtering operation in time domain
-% y[n] = h1*x[n]+h2*x[n-1]+h3*x[n-2]+... 729
+% y[n] = h1*x[n]+h2*x[n-1]+h3*x[n-2]+... 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Inputs are the discrete time signal and filter cofficients
@@ -16,7 +16,8 @@ function FilteredSignal = myFIRFilter(Signal1, Filter_coff)
     interVector = zeros(1, length(Filter_coff));
     
     sum=0;
-
+%     h = waitbar(0, 'Wait...');
+    
     for i =1:N
         interVector(1)=Signal1(i);
         intermulti = zeros(1, length(Filter_coff));
@@ -35,6 +36,8 @@ function FilteredSignal = myFIRFilter(Signal1, Filter_coff)
         %Shifting operation
         for j =length(interVector):-1:2
             interVector(j)= interVector(j-1);
-        end
+        end 
+%         waitbar(i/N, h, num2str(fix(100*i/N)));
     end
+%     close(h);
 end
