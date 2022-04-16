@@ -33,7 +33,7 @@ function[N_PSD, Smoothed_Perio, alpha, lambda_d] = Noise_Estimation_Minimum_Stat
     snr_exp = -tshift/tdecay;
     [len1, n_frames1] = size(Periodogram);
     N_PSD = zeros(len1,n_frames1);
-    lambda_d = zeros(n_frames1);
+    lambda_d = zeros(1,n_frames1);
     Smoothed_Perio = zeros(len1,n_frames1);
     alpha = zeros(len1,n_frames1);
     
