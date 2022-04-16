@@ -155,7 +155,7 @@ function[N_PSD, Smoothed_Perio, alpha, lambda_d] = Noise_Estimation_Minimum_Stat
 
           %Step 6: Updating Noise PSD
           N_PSD_prev = N_PSD(:,lambda);
-          lambda_d(lambda) = sum(N_PSD(:,lambda));
+          lambda_d(lambda) = sum(abs(N_PSD(:,lambda)));
     end
 end
 
