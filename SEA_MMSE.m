@@ -47,7 +47,7 @@ function output = SEA_MMSE(Audiosample, fsample)
 
     for i =1:numberOfFrames
         % Something
-        if i<=NIS % If initial silence ignore VAD
+     6yh   if i<=NIS % If initial silence ignore VAD
             SpeechFlag=0;
             NoiseCounter=100;
         else % Else Do VAD
