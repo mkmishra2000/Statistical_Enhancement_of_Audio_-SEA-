@@ -45,7 +45,7 @@ function lpfCoff = impulseResponseOfFilterLPF(Cutoff, filterLength, type)
         lpfCoff = hfilter.*HannWindow1;
     end
            
-    
+    figure;
     freqz(lpfCoff);
     title("LPF design");
     
