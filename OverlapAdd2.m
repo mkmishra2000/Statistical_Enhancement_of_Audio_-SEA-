@@ -11,8 +11,7 @@ function ReconstructedSignal=OverlapAdd2(XNEW,yphase,windowLen,ShiftLen)
 %example in the case of non overlapping signals it is equal to W and in the
 %case of %50 overlap is equal to W/2. if not givven W/2 is used. Y is the
 %reconstructed time domain signal.
-%Sep-04
-%Esfandiar Zavarehei
+
 
 if nargin<2
     yphase=angle(XNEW);

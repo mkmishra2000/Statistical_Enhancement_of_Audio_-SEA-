@@ -12,12 +12,13 @@
 % 4. TempleNoisyclip2_Agra.wav
 % 5. TestAudio4.wav
 % 6. TestAudio5.wav
+% 7. TestAudioRaga.wav
 tic
 
 close all
 clear all
 
-[samples, fsample] = audioread('TestSongs/TempleNoisyclip1_Agra.wav');
+[samples, fsample] = audioread('TestSongs/TempleNoisyclip2_Agra.wav');
 
 % If PSD of audio is required to check
 % ShowPSD(samples, fsample);
@@ -54,6 +55,6 @@ Out_Audio2 = SEA_MMSE_Imp3(frame2, fsample);
 
 EnhanceAudio = [Out_Audio1, Out_Audio2];
 
-audiowrite('EnhanceAudio\Enhance1_templeNoise1.wav', EnhanceAudio, fsample);
+audiowrite('EnhanceAudio\Enhance1_templeNoise2.wav', EnhanceAudio, fsample);
 fprintf("\n Completed \n")
 toc
